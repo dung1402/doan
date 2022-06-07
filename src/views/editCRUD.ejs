@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">Edit user information</div>
+            <form action="/put-crud" method="POST">
+             
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputFirstname4">Firstname</label>
+                  <input type="text" class="form-control" placeholder="Firstname" name="firstname"
+                   value="<%= user.firstname %>">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLastname">Last name</label>
+                  <input type="text" class="form-control"  placeholder="Lastname" name="lastname"  value="<%= user.lastname %>">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" placeholder="1234 Main St" name="address" value="<%= user.address %>">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputphoneNumber">Phone Number</label>
+                  <input type="text" class="form-control" name="phonenumber" value="<%= user.phonenumber %>">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputSex">Sex</label>
+                  <select name="gender" class="form-control" >
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputZip">Role</label>
+                  <select name="roleId" class="form-control">
+                    <option value="1">Admin</option>
+                    <option value="2">Docter</option>
+                    <option value="3">Patient</option>
+                  </select>
+                </div>
+              </div>
+            
+              <input name="id" value="<%= user.id %>" type="text" hidden/>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
